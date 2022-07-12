@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, foreign_key: :user_id
   has_many :likes
   has_many :comments
   validates :title, presence: true, length: { minimum: 3, maximum: 255 }

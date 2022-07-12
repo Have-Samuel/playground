@@ -24,12 +24,4 @@ RSpec.describe Comment, type: :model do
     subject.post = nil
     expect(subject).to_not be_valid
   end
-
-  describe '#update_comment_counter' do
-    it 'should increment the comments_counter of the post' do
-      comments_counter = subject.post.comments_counter
-      subject.update_comment_counter
-      expect(subject.post.comments_counter).to eq(comments_counter + 1)
-    end
-  end
 end

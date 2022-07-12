@@ -39,14 +39,6 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  describe '#update_post_counter' do
-    it 'should increment the post_counter of the user' do
-      post_counter = subject.user.post_counter
-      subject.update_post_counter
-      expect(subject.user.post_counter).to eq(post_counter + 1)
-    end
-  end
-
   describe 'last_5_comments' do
     it 'should return the last_5_comments' do
       expect(subject.last_5_comments.count).to be <= 5
