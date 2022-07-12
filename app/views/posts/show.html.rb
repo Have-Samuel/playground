@@ -1,1 +1,1 @@
-<h2> Here is a list of posts for a given user </h2>
+<h2> Here is a single post with a collection of comments </h2>
