@@ -2,7 +2,7 @@
 
 # Blog App: Creating a data model
 
-> In this project, 
+> In this project,
 ***
 ## Milestone I:
 ***
