@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Comments, type: :model do
+RSpec.describe Comment, type: :model do
   subject { Comment.new(text: 'feature requests are welcome!', post: Post.first, user: User.first) }
 
   before { subject.save }

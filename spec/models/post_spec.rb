@@ -29,14 +29,14 @@ RSpec.describe Post, type: :model do
     subject.comments_counter = -1
     expect(subject).to_not be_valid
     subject.comments_counter = 'z'
-    expect(subject).to_ be_valid
+    expect(subject).to_not be_valid
   end
 
   it 'LikesCounter must be an integer greater than or equal to zero.' do
     subject.likes_counter = 'z'
     expect(subject).to_not be_valid
     subject.likes_counter = -1
-    expect(subject).to_ be_valid
+    expect(subject).to_not be_valid
   end
 
   describe '#update_post_counter' do
