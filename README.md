@@ -1,24 +1,92 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog App: Creating a data model
 
-Things you may want to cover:
+> In this project,
+***
+## Milestone I:
+***
+> User Migration file to build schema.
 
-* Ruby version
+[ERD Diagram](https://github.com/microverseinc/curriculum-rails/blob/main/blog-app/images/blog_app_erd.png)
 
-* System dependencies
+### Basic Requirements:
+***
+* Create a new app.
+* Initialize project with Git.
+* project has Postgres database set up.
+* Build your project schema.
+* Create and run the necessary migration files.
+* Table and column names should match the ERD diagram.
+* note: photo for users table should be a link to an image
+* Foreign keys should be included.
+* All columns that are foreign keys should have a corresponding index.
 
-* Configuration
+## Milestone II:
+***
+> Setup models.
 
-* Database creation
+### Basic Requirements:
+***
+* Create a `User` model.
+* Create a `Post` model.
+* Create a `Comment` model.
+* Create a `Tag` model.
+* Setup associations between models.
+* Create custom methods on models.
 
-* Database initialization
+  * `User#most_recent_three_posts`
+  * `Post#update_post_counter`
+  * `Post#most_recent_five_comments`
+  * `Like#update_like_counter`
 
-* How to run the test suite
+## Milestone III:
+***
+> Add Validation for models and create specs for models.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Basic Requirements:
+***
+* __For the User model:__
+  * Name must not be blank.
+  * PostsCounter must be an integer greater than or equal to zero.
+* __For the Post model:__
+  * Title must not be blank.
+  * Title must not exceed 250 characters.
+  * CommentsCounter must be an integer greater than or equal to zero.
+  * LikesCounter must be an integer greater than or equal to zero.
+* __Add unit specs for all of your models' methods and validations.__
 
-* Deployment instructions
+## Milestone IV:
+***
+> create all controllers and views for the Blog app. Add simple placeholders for views with plain HTML.
 
-* ...
+### Basic Requirements:
+***
+* Create `user_posts`, `user_post`, `users` and `user` router
+* Create a `UsersController` with action method for `index` and `show`
+* Create a `PostsController` with action method for `index` and `show`
+* Create a view files for `users` and `posts` with a placeholder for each.
+
+👤 **Have Samuel**
+
+- GitHub: [Have-Samuel](https://github.com/Have-Samuel)
+- Twitter: [@samhave1](https://twitter.com/@samhave1)
+- LinkedIn: [Have Samuel Kabreebe](https://linkedin.com/in/Have-Samuel-Kabreebe)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Have-Samuel/playground/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
