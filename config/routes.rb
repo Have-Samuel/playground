@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   root 'users#index'
   get 'users' => 'users#index'
   get 'users/:id' => 'users#show', as: :user
-  get 'users/:user_id/posts' => 'post#index', as: :user_posts
-  get 'users/:user_id/posts/:id' => 'post#show', as: :user_post
+  get 'users/:user_id/posts' => 'posts#index', as: :user_posts
+  get 'users/:user_id/posts/:id' => 'posts#show', as: :user_post
 end
