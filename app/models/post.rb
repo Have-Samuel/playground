@@ -1,4 +1,4 @@
-class Post < ApplicationRecord
+class Post < ActiveRecord::Base
   belongs_to :user, foreign_key: :user_id
   has_many :likes
   has_many :comments
@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def last_5_comments
+  def most_recent_five_comments
     comments.order!(created_at: :desc).limit(5)
   end
 

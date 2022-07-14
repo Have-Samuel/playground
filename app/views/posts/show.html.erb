@@ -1,1 +1,17 @@
-<h2> Here is a single post with a collection of comments </h2>
+<div class="posts">
+  <strong>Post #<%= @post.id %> by <%= @post.user.name %></strong>
+  <div class="post__like-comments">
+    <p>Comments: <%=@post.comments_counter %>, Likes: <%=@post.likes_counter %></p>
+  </div>
+  <p><%= @post.text %></p>
+</div>
+
+<div class="comments">
+  <% @comments.each do |comment| %>
+    <div class="comments__list">
+      <div class="comments__list--details">
+        <p><%=@post.user.name %>: <%=  comment.text %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
