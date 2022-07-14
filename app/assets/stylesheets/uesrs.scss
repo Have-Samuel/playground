@@ -8,7 +8,7 @@
     padding: 0.5rem;
     width: 100%;
     border: 1px solid var(--gray-border);
-    background-color:  var(--white);
+    background-color: var(--white);
 
     &:not(:last-child) {
       margin-bottom: 1rem;
@@ -18,7 +18,7 @@
       width: 10rem;
       height: 10rem;
       margin-right: 2rem;
-      border: 1pxsolid var(--grey-border);
+      border: 1px solid var(--grey-border);
       border-radius: 2px;
 
       .img {
@@ -36,7 +36,7 @@
       border: 1px solid var(--grey-border);
       padding: 0.5rem;
 
-      .posts-counter{
+      .posts-counter {
         align-self: flex-end;
       }
     }
