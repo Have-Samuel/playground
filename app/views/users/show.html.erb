@@ -1,21 +1,21 @@
 <div class="users__list">
-<div class="users__list--photo">
-<%= image_tag @user.photo, :class => 'img' %>
-</div>
-<div class="users__list--details">
-<h4 class="name"><%= @user.name %><h4>
-<p class="post-counter">Number of posts: <strong><%= @user.posts_counter %></strong>
-</div>
+  <div class="users__list--photo">
+    <%= image_tag @user.photo, :class => 'img' %>
+  </div>
+  <div class="users__list--details">
+    <h4 class="name"><%= @user.name %></h4>
+    <p class="post-counter">Number of posts: <strong><%= @user.posts_counter %></strong>
+  </div>
 </div>
 
 <div class="bio">
-<h4>Bio</h4>
-<p><%= @user.bio %></p>
+  <h4>Bio</h4>
+  <p><%= @user.bio %></p>
 </div>
 
 <% @posts.each.with_index(1) do |post, index| %>
   <div class="posts">
-  <strong>Post #<%=index %></strong>
-  <p><%= post.text %></p>
+    <strong>Post #<%=index %></strong>
+    <p><%= post.text %></p>
   </div>
-  <% end %>
+<% end %>

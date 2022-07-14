@@ -1,13 +1,13 @@
 <ul class="users">
-<% @users.each do |user| %>
-  <li class="users__list">
-  <div class="users__list--photo">
-  <%= image-tag user.photo, :class => 'img' %>
-  </div>
-  <div class="users__list--details">
-  <h4 class="name"><%= user.name %></h4>
-  <p class="posts-counter">Number of posts: <strong><%= user.post-counter></p>
-  </div>
-  </li>
+  <% @users.each do |user| %>
+    <li class="users__list">
+      <div class="users__list--photo">
+        <%= image_tag user.photo, :class => 'img' %>
+      </div>
+      <div class="users__list--details">
+        <h4 class="name"><%= user.name %></h4>
+        <p class="posts-counter">Number of posts: <strong><%= user.posts-counter %></strong></p>
+      </div>
+    </li>
   <% end %>
-  </div>
+</ul>
