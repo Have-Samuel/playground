@@ -3,26 +3,28 @@
   <% unless post.user.name  == user_name %>
   <% user_name = post.user.name %>
   <div class="line-break"></div>
-  <div class="users, list">
-  <div class="users, list, photo">
+  <div class="users__list">
+  <div class="users__list--photo">
   <%= image_tag post.user.photo, :class => 'img' %>
   </div>
-  <div class="users, list, details">
+  <div class="users__list--details">
   <h4 class="name"><%= post.user.name %></h4>
   <p class="posts-counter">Number of posts: <strong><%= post.user.posts_counter %></stong></p>
   </div>
   </div>
   <% end %>
-  <div class=""posts">
+  <div class="posts">
   <strong>Post #<%=index %></strong>
   <p><%= post.test %></p>
+  >div class="posts__like-comments"
   <p>Comments: <%=post.comments_counter %>, likes: <%=post.likes_counter %></p>
   </div>
   </div>
 
   <div class="comments">
   <%post.most_recent_five_comments.each do |comment| %>
-    <div class="comments, list">
+    <div class="comments__list">
+    <div class="comments__list--details">
     <p><%=post.user.name %>: <%= comment.text %></p>
     </div>
     </div>
