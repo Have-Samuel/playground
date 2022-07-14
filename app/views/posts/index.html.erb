@@ -1,6 +1,6 @@
 <% user_name = '' %>
 <% @posts.each.with_index(1) do |post, index| %>
-  <% unless post.user.name  == user_name %>
+  <% unless post.user.name == user_name %>
     <% user_name = post.user.name %>
     <div class="line-break"></div>
     <div class="users__list">
