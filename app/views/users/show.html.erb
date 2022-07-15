@@ -1,11 +1,5 @@
 <div class="users__list">
-  <div class="users__list--photo">
-    <%= image_tag @user.photo, :class => 'img' %>
-  </div>
-  <div class="users__list--details">
-    <h4 class="name"><%= @user.name %></h4>
-    <p class="post-counter">Number of posts: <strong><%= @user.posts_counter %></strong>
-  </div>
+  <%= render partial: 'partials/user', locals: { user: @user } %>
 </div>
 
 <div class="bio">
@@ -14,8 +8,5 @@
 </div>
 
 <% @posts.each.with_index(1) do |post, index| %>
-  <div class="posts">
-    <strong>Post #<%=index %></strong>
-    <p><%= post.text %></p>
-  </div>
+  <%= render partial: 'partials/post', locals: { post: post, type: '', id: index } %>
 <% end %>
