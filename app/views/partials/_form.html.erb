@@ -1,5 +1,5 @@
 <% if post_type == 'post' %>
-  <%= form_with model:, url: user_post_path do |f|%>
+  <%= form_with model: @post, url: user_post_path do |f|%>
     <div class="form-group" id="form-group">
       <div class="form-group__title">
         <%= f.label :title, class: 'form-group__title--label' %>
@@ -17,7 +17,7 @@
       <%= form_with url: user_create_comment_path, method: 'post' do |f| %>
         <div class='form-group__text'>
           <%= f.label :text, class: 'form-group_text--label' %>
-          <%= f.text_area :text, class; 'form-group__text--text' %>
+          <%= f.text_area :text, class: 'form-group__text--text' %>
         </div>
         <%= f.submit 'Comment', class: 'btn' %>
       <% end %>
