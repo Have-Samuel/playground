@@ -1,0 +1,12 @@
+<div class='posts'>
+  <strong>Post #<%= id %> by <%= post.user.name %></strong>
+  <p><%= post.text %></p>
+  <% if type == 'single_post' || type == 'all_post' %>
+    <div class='posts__like-comments'>
+      <p>Comments: <%=post.comments_counter %>, Likes: <%=post.likes_counter %></p>
+    </div>
+  <% end %>
+  <% if type == 'single_post' %>
+    <%= render partial: 'partials/form', locals: { post_type: '' } %>
+  <% end %>
+</div>
