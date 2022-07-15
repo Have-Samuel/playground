@@ -3,31 +3,9 @@
   <% unless post.user.name == user_name %>
     <% user_name = post.user.name %>
     <div class="line-break"></div>
-    <div class="users__list">
-      <div class="users__list--photo">
-        <%= image_tag post.user.photo, :class => 'img' %>
-      </div>
-      <div class="users__list--details">
-        <h4 class="name"><%= post.user.name %></h4>
-        <p class="posts-counter">Number of posts: <strong><%= post.user.posts_counter %></strong></p>
-      </div>
-    </div>
-  <% end %>
-  <div class="posts">
-    <strong>Post #<%=index %></strong>
-    <p><%= post.text %></p>
-    <div class="posts__like-comments">
-      <p>Comments: <%=post.comments_counter %>, Likes: <%=post.likes_counter %></p>
-    </div>
-  </div>
-
-  <div class="comments">
-    <% post.most_recent_five_comments.each do |comment| %>
-      <div class="comments__list">
-        <div class="comments__list--details">
-          <p><%=post.user.name %>: <%= comment.text %></p>
-        </div>
-      </div>
+    <%= render partial: 'partials/user', locals: { user: post.user } %>
+    <%= render partial: 'partials/form', locals: { post_type: post } %>
     <% end %>
-  </div>
-<% end %>
+    <%= render partial: 'partials/post', locals: { post: post, type: 'all_post', id: index } %>
+    <%= render partial: 'partials/comment', locals: { comments: post.most_recent_five_comments, user: post.user } %>
+    <% end %>
