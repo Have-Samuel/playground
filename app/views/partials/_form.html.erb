@@ -1,5 +1,5 @@
 <% if post_type == 'post' %>
-  <%= form_with model: @post, url: user_post_path do |f|%>
+  <%= form_with model: @post, url: user_posts_path do |f| %>
     <div class="form-group" id="form-group">
       <div class="form-group__title">
         <%= f.label :title, class: 'form-group__title--label' %>
