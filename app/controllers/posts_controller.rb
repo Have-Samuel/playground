@@ -12,8 +12,9 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to user_post_path(current_user.id, @post,id)
-    else render :index
+      redirect_to user_post_path(current_user.id, @post, id)
+    else
+      render :index
     end
   end
 
@@ -30,7 +31,7 @@ class PostsController < ApplicationController
     Like.create(user: current_user, post: @post)
     redirect_to user_post_path(current_user.id, @post.id)
   rescue ActiveRecord::RecordInvalid
-      render :show
+    render :show
   end
 
   private
