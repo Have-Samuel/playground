@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to user_post_path(current_user.id, @post, id)
+      redirect_to user_post_path(current_user.id, @post.id)
     else
       render :index
     end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def create_comment
     @post = Post.find(params[:id])
-    Comment.create(user: current_user, post: @post, text: commet_params[:text])
+    Comment.create(user: current_user, post: @post, text: comment_params[:text])
     redirect_to user_post_path(current_user.id, @post.id)
   rescue ActiveRecord::RecordInvalid
     render :show

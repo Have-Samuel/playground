@@ -1,2 +1,2 @@
-<%= render partial: 'partials/posts', locals: { post: @post. type: 'single_post', id: @post.id } %>
+<%= render partial: 'partials/post', locals: { post: @post, type: 'single_post', id: @post.id } %>
 <%= render partial: 'partials/comment', locals: { comments: @comments, user: @post.user } %>
