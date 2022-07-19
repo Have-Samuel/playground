@@ -39,9 +39,14 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  describe 'last_5_comments' do
-    it 'should return the last_5_comments' do
-      expect(subject.last_5_comments.count).to be <= 5
+  # describe 'last_5_comments' do
+  #   it 'should return the last_5_comments' do
+  #     expect(subject.last_5_comments.count).to be <= 5
+  #   end
+  # end
+  describe '#most_recent_five_comments' do
+    it 'should return the most recent five comments' do
+      expect(subject.most_recent_five_comments.count).to be <= 5
     end
   end
 end
