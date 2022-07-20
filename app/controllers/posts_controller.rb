@@ -14,24 +14,10 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to user_post_path(current_user.id, @post.id)
     else
-      @posts = Post.includes([:user]).where(user_id: params[:user_id])
+      # @posts = Post.includes([:user]).where(user_id: params[:user_id])
       render :index
     end
   end
-
-  # def create
-  #   @post = Post.new(post_params)
-    # @post.user = current_user?
-  #   respond_to do |format|
-  #     if @post.save
-  #       format.html { redirect_to post_path(@post), notice: "Post was successfully created." }
-  #       format.json { render :show, status: :created, location: @post }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @post.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
 
   def create_comment
     @post = Post.find(params[:id])
