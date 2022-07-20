@@ -11,12 +11,12 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Title must not exceed 250 characters.' do
-    subject.title = 280
+    subject.title = 'a' * 280
     expect(subject).to_not be_valid
   end
 
   it 'Text must not exceed 250 characters.' do
-    subject.text = 270
+    subject.text = 'a' * 256
     expect(subject).to_not be_valid
   end
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  user = User.create(name: 'Have', photo: 'wwww.google.com', bio: 'Micro')
+  user = User.create(name: 'Have', photo: 'https://cdn-icons-png.flaticon.com/512/149/149071.png', bio: 'Micro')
   Post.create(user:, title: 'String', text: 'text')
   describe 'GET /users/:user_id/posts' do
     it 'check the status is successful' do
