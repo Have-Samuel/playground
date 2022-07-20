@@ -2,7 +2,7 @@ require 'rails_helper'
 
 Rspec.describe 'user show page', type: :feature do
   before :each do
-    @user = User.create(name: 'Justine', photo: 'https://example.com/photo.jpg', bio: 'Employee')
+    @user = User.create(name: 'Justine', photo: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png', bio: 'Employee')
     @post = Post.create(user: @user, title: 'Have', text: 'Traveller')
     visit user_path(@user)
   end
@@ -33,11 +33,11 @@ Rspec.describe 'user show page', type: :feature do
 
   it 'when I click a user\'s post, I am redirected to the pos show page ' do
     click_on 'Post 1'
-    expect(page)to. have_content_path user_path(@user, @post)
+    expect(page)to. have_current_path user_path(@user, @post)
   end
 
   it 'when I click to see all posts, I am redirected to the user\'s post index page' do
     click_on 'Show all user post'
-    expect(page).to have_content_path user_path(@user)
+    expect(page).to have_current_path user_path(@user)
   end  
 end

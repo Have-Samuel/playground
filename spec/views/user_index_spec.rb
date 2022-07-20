@@ -2,7 +2,7 @@ require 'rails_helper'
 
 Rspec.describe 'user index page', type: :feature do
   before :each do
-    @user = User.create(name: 'Have', photo: 'https://example.com/photo.jpg', bio: 'Traveller')
+    @user = User.create(name: 'Have', photo: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png', bio: 'Traveller')
     visit root_path
   end
 
@@ -21,6 +21,6 @@ Rspec.describe 'user index page', type: :feature do
 
   it 'when I click on the user, I am redirected to the user show page' do
     click_on @user.name
-    expect(page).to have_content_path user_path(1)
+    expect(page).to have_current_path user_path(1)
   end
 end
