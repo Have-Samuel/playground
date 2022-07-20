@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
   #     expect(subject.last_3_posts.count).to be <= 5
   #   end
   # end
-  
+
   describe '#most_recent_three_posts' do
     it 'should return the most recent three posts' do
       expect(subject.most_recent_three_posts.count).to be <= 3

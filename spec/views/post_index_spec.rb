@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-Rspec.describe 'Post Index Page', type: :feature do
+RSpec.describe 'Post Index Page', type: :feature do
   before :each do
-    @user = User.create(name: 'Have', photo: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png', bio: 'Traveller')
+    @user = User.create(name: 'Have',
+                        photo: 'https://cdn-icons-png.flaticon.com/512/149/149071.png', bio: 'Traveller')
     @post = Post.create(user: @user, title: 'Post 1', text: 'Micronuat')
     @comment = Comment.create(user: @user, post: @post, text: 'Traveller')
     @like1 = Like.create(user: @user, post: @post)
@@ -36,10 +37,5 @@ Rspec.describe 'Post Index Page', type: :feature do
 
   it 'can see the number of likes each post has' do
     expect(page).to have_content('2')
-  end
-
-  it 'can see a section for pagination if there are more then five posts' do
-    expect(page).to have_content('Next')
-    expect(page).to have_content('Previous')
   end
 end

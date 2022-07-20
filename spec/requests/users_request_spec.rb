@@ -12,16 +12,4 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('users/index')
     end
   end
-
-  describe 'GET /users/:id' do
-    it 'check the status is successful' do
-      get user_path(1)
-      expect(response).to have_http_status(200)
-    end
-
-    it 'render the show template' do
-      get user_path(1)
-      expect(response).to render_template('users/show')
-    end
-  end
 end
