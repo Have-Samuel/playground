@@ -9,4 +9,7 @@
 
 <% @posts.each.with_index(1) do |post, index| %>
   <%= render partial: 'partials/post', locals: { post: post, type: '', id: index } %>
+  <%= link_to post.title, user_post_path(@user, post) %>
 <% end %>
+
+<%= link_to 'Show all user post', user_post_path(user) %>
