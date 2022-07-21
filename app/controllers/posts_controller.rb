@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   def create_comment
     @post = Post.find(params[:id])
     Comment.create(user: User.find(params[:user_id]), post: @post, text: comment_params[:text])
-    redirect_to user_post_path(params[user_id], @post.id)
+    redirect_to user_post_path(params[:user_id], @post.id)
   rescue ActiveRecord::RecordInvalid
     render :show
   end

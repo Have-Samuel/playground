@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '9801f52b91b7e17f1bd3f613cbf3eac514603e760430c66ad7d1f37aaf90b0bc7ed5e912946f02f02d0d589f8784a833e1a7768cb78fc4cd6dbdd59c561f4e27'
+  # config.secret_key = '3b657edcba30e25f1dec0007a7c72fcccccf2f99be37ed97c8e3fbea99c8ae427d89b385b194a7abf098cfa934f20c2d42f7cf395d7072115d78a2a6ca96d290'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'f09da10c257b67b430b97b47915d77c3f645ba3eab40f42f6f75f6d92dc8bb69b7c740dbddc599e99668cc4077f29d75957ff56a0c9189b2f118769ebf229d56'
+  # config.pepper = 'ee5d063aa95dd88b96aa73bb6eb5ecbb2317480243630e49e4fa0fab3dc961fa9992e6803232a3400eb81d8ef24e6df4845746bd8143d7b2818843ef12c208cc'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -244,7 +244,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
