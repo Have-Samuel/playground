@@ -1,12 +1,29 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-
   before_action :update_allowed_parameters, if: :devise_controller?
+  layout :layout_by_resource
+
+  private
+
+  def layout_by_resource
+    devise_controller? ? 'session' : 'application'
+  end
 
   protected
 
-  def update_allowed_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :surname, :email, :password)}
-    devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :surname, :email, :password, :current_password)}
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(User)
+      user_path(resource)
+    else
+      super
+  end
+  def configure_devise_params
+    devise_parameter_sanitizer.permit(:sign_up, key: %i[
+                                        name
+                                        email
+                                        password
+                                        password_confirmation
+                                      ])
   end
 end
+
+
