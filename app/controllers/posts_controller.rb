@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes([:user]).order(user_id: :desc).paginate(page: params[page], per_page: 5)
+    @posts = Post.includes([:user]).order(user_id: :desc)
   end
 
   def show

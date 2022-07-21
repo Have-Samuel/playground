@@ -1,5 +1,4 @@
 <ul class="users">
-  <%= will_paginate %>
   <% @users.each do |user| %>
     <%= link_to user_path(user) do %>
       <%= render partial: 'partials/user', locals: { user: } %>
