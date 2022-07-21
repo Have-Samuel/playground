@@ -10,27 +10,26 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user = current_user
+    @post.user = User.find(params[:user_id])
     if @post.save
-      redirect_to user_post_path(current_user.id, @post.id)
+      redirect_to user_post_path(params[:user_id], @post.id)
     else
-      # @posts = Post.includes([:user]).where(user_id: params[:user_id])
       render :index
     end
   end
 
   def create_comment
     @post = Post.find(params[:id])
-    Comment.create(user: current_user, post: @post, text: comment_params[:text])
-    redirect_to user_post_path(current_user.id, @post.id)
+    Comment.create(user: User.find(params[:user_id]), post: @post, text: comment_params[:text])
+    redirect_to user_post_path(params[user_id], @post.id)
   rescue ActiveRecord::RecordInvalid
     render :show
   end
 
   def create_like
     @post = Post.find(params[:id])
-    Like.create(user: current_user, post: @post)
-    redirect_to user_post_path(current_user.id, @post.id)
+    Like.create(user: User.find([user_id]), post: @post)
+    redirect_to user_post_path(params[:user_id], @post.id)
   rescue ActiveRecord::RecordInvalid
     render :show
   end
