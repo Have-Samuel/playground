@@ -1,4 +1,5 @@
 <% user_name = '' %>
+<%= will_paginate %>
 <% @posts.each.with_index(1) do |post, index| %>
   <% unless post.user.name == user_name %>
     <% user_name = post.user.name %>
@@ -9,3 +10,4 @@
   <%= render partial: 'partials/post', locals: { post: post, type: 'all_post', id: index } %>
   <%= render partial: 'partials/comment', locals: { comments: post.most_recent_five_comments, user: post.user } %>
 <% end %>
+<%= render partial: 'partials/form', locals: { post_type: 'post' } %>
