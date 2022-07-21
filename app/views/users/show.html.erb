@@ -1,3 +1,5 @@
+<%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+
 <div class="users__list">
   <%= render partial: 'partials/user', locals: { user: @user } %>
 </div>
