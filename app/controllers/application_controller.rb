@@ -15,7 +15,9 @@ class ApplicationController < ActionController::Base
       user_path(resource)
     else
       super
+    end
   end
+
   def configure_devise_params
     devise_parameter_sanitizer.permit(:sign_up, key: %i[
                                         name
@@ -25,5 +27,3 @@ class ApplicationController < ActionController::Base
                                       ])
   end
 end
-
-

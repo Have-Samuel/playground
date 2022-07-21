@@ -5,7 +5,6 @@
     <% user_name = post.user.name %>
     <div class="line-break"></div>
     <%= render partial: 'partials/user', locals: { user: post.user } %>
-    <%= render partial: 'partials/form', locals: { post_type: 'post' } %>
   <% end %>
   <%= render partial: 'partials/post', locals: { post: post, type: 'all_post', id: index } %>
   <%= render partial: 'partials/comment', locals: { comments: post.most_recent_five_comments, user: post.user } %>
