@@ -101,13 +101,17 @@
   * Create a comment on behalf of the `current_user`.
 * Allow Users to add likes to Posts.
 
-#Author
+#Authors
 
 👤 **Have Samuel**
 
 - GitHub: [Have-Samuel](https://github.com/Have-Samuel)
 - Twitter: [@samhave1](https://twitter.com/@samhave1)
 - LinkedIn: [Have Samuel Kabreebe](https://linkedin.com/in/Have-Samuel-Kabreebe)
+
+👤 **Firdavs Allamurotov**
+ * Github: [@fed1k](https://github.com/fed1k)
+ * LinkedIn: [@fed1k](https://www.linkedin.com/in/firdavs-allamurotov/)
 
 ## 🤝 Contributing
 
