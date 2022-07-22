@@ -17,8 +17,11 @@ class User < ActiveRecord::Base
     self.role == role.to_s
   end
 
-
   def most_recent_three_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def authenticate(password)
+    valid_password?(password)
   end
 end
