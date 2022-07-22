@@ -1,5 +1,5 @@
 <div class="comments">
-  <% comments.each do |comment| %>
+  <% comments.includes(:user).each do |comment| %>
     <div class="comments__list">
       <div class="comments__list--details">
         <p><%=user.name %>: <%= comment.text %><p>

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'home#index'
-  devise_for :users
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :create, :destroy]
     resources :comments, only: [:destroy]
