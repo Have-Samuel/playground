@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'home#index'
+  devise_for :users
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :create, :destroy]
+    resources :comments, only: [:destroy]
     post 'posts/:id/comments' => 'posts#create_comment', as: :create_comment
     post 'post/:id/likes' => 'posts#create_like', as: :create_like
   end
