@@ -11,6 +11,13 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
+  ROLES = %i[admin default].freeze
+
+  def is?(role)
+    self.role == role.to_s
+  end
+
+
   def most_recent_three_posts
     posts.order(created_at: :desc).limit(3)
   end
