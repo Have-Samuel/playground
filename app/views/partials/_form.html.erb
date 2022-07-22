@@ -1,0 +1,30 @@
+<% if post_type == 'post' %>
+  <%= form_with url: user_posts_path, method: 'post' do |f| %>
+    <div class="form-group" id="form-group">
+      <div class="form-group__title">
+        <%= f.label :title, class: 'form-group__title--label' %>
+        <%= f.text_field :title, class: 'form-group__title--title' %>
+      </div>
+      <div class="form-group__text">
+        <%= f.label :text, class: 'form-group__text--label' %>
+        <%= f.text_area :text, class: 'form-group__text--text' %>
+        </div>
+          <%= f.submit "Create Post", class: 'btn' %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class='form-group' id='form-group'>
+      <%= form_with url: user_create_comment_path, method: 'post' do |f| %>
+        <div class='form-group__text'>
+          <%= f.label :text, class: 'form-group_text--label' %>
+          <%= f.text_area :text, class: 'form-group__text--text' %>
+        </div>
+        <%= f.submit 'Comment', class: 'btn' %>
+      <% end %>
+
+      <%= form_with url: user_create_like_path, method: 'post' do |f| %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+        <%= f.submit 'Like', class: 'btn btn-like' %>
+      <% end %>
+    </div>
+  <% end %>

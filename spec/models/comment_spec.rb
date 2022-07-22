@@ -11,7 +11,7 @@ RSpec.describe Comment, type: :model do
   end
 
   it 'text must not exceed 255 characters' do
-    subject.text = 256
+    subject.text = 'a' * 256
     expect(subject).to_not be_valid
   end
 

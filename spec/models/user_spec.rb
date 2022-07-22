@@ -17,9 +17,15 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  describe 'last_3_posts' do
-    it 'should return the last three posts' do
-      expect(subject.last_3_posts.count).to be <= 5
+  # describe 'last_3_posts' do
+  #   it 'should return the last three posts' do
+  #     expect(subject.last_3_posts.count).to be <= 5
+  #   end
+  # end
+
+  describe '#most_recent_three_posts' do
+    it 'should return the most recent three posts' do
+      expect(subject.most_recent_three_posts.count).to be <= 3
     end
   end
 end

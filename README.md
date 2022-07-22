@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Blog App: Creating a data model
+# Blog App:
 
 > In this project,
 ***
@@ -66,6 +66,42 @@
 * Create a `UsersController` with action method for `index` and `show`
 * Create a `PostsController` with action method for `index` and `show`
 * Create a view files for `users` and `posts` with a placeholder for each.
+
+## Milestone V:
+***
+> Set up tests on the `UsersController` and `PostsController`.
+### Basic Requirements:
+***
+* Add RSpec as a gem to the project.
+* Create a Request Spec for the `UsersController` and `PostsController`.
+* The following test case are checked:
+  * if response was successful, 
+  * if a correct template was rendered.
+  * if the response body includes correct placeholder text.
+
+## Milestone VI:
+***
+> Add Views associated with the Models and Controllers already created in the Blog App
+### Basic Requirements:
+***
+* Display all users in the `/users` page.
+* Display a single user in the `/users/:id` page.
+* Display all posts in the `/users/:user_id/posts` page.
+* Display a single post in the `/users/:user_id/posts/:id` page.
+
+## Milestone VII:
+***
+> Add forms to blog app
+### Basic Requirements:
+***
+* Create a method called `current_user` in your ApplicationController.
+  * It will return the first user from the database.
+* Create forms to perform the following functions:
+  * Creates a Post on behalf of the `current_user`.
+  * Create a comment on behalf of the `current_user`.
+* Allow Users to add likes to Posts.
+
+#Author
 
 👤 **Have Samuel**
 
