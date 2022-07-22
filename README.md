@@ -2,6 +2,28 @@
 
 # Blog App:
 
+## Setup
+
+To get a local copy up and running follow this simple step:
+
+- Clone repository to your local machine: 
+`git@github.com:Have-Samuel/playground.git`
+This will create a directory in the name of the project folder.
+
+- Navigate to project folder using `cd playground`
+
+## Install
+
+- Run `bundle install` to install all gems for the project.
+
+## Usage
+
+- Run `rails s` to start the server
+- Open `http://127.0.0.1:3000/` in your browser to use the app
+
+## Tests
+- Run `rspec` to run the tests
+
 > In this project,
 ***
 ## Milestone I:
