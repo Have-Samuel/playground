@@ -35,6 +35,7 @@ gem 'will_paginate'
 # Authorization Rules
 gem 'cancancan'
 
+gem 'rswag'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
